@@ -2,31 +2,75 @@
 
 # Created by: Jackson Naufal
 # Created on: March 2022
-# This is fahrenheit to celsius converter
+# This is whats your grade level
 
 
-def area_function(width, length):
+def grade_function(grade_level):
+    
+    
+    
+    if grade_level == "4+":
+        grade_percentage = 97.5
 
-    area = round((width * length) / 2)
+    elif grade_level == "4":
+        grade_percentage = 90.5
+
+    elif grade_level == "4-":
+        grade_percentage = 83  
+
+    elif grade_level == "3+":
+        grade_percentage = 78
+
+    elif grade_level == "3":
+        grade_percentage = 74.5
+
+    elif grade_level == "3-":
+        grade_percentage = 71
+
+    elif grade_level == "2+":
+        grade_percentage = 68
+
+    elif grade_level == "2":
+        grade_percentage = 65.5
+
+    elif grade_level == "2-":
+        grade_percentage = 61
+
+    elif grade_level == "1+":
+        grade_percentage = 58
+
+    elif grade_level == "1":
+        grade_percentage = 54.5
+
+    elif grade_level == "1-":
+        grade_percentage = 51
+
+    elif grade_level == "R":
+        grade_percentage = 39.5
+    else:
+        grade_percentage = -1
+
+    return grade_percentage
+
 
     # output
-    print("The area is {0}, base = {1}, height = {2}!".format(area, length, width))
 
 
 def main():
 
     # call function
 
-    width_string = input("Enter Your width (mm): ")
-    length_string = input("Enter Your length (mm): ")
-    try:
+    level_grade = input("Enter Your grade (4+, 4, 4-, etc): ")
+    
 
-        width = int(width_string)
-        length = int(length_string)
-        area_function(width, length)
+    function_grade = grade_function(level_grade)
+    
+    
+    if function_grade == -1:
+        print("Invalid Input")
+    else:
+        print ("The {0} level is a {1}%.".format(level_grade, function_grade))
 
-    except Exception:
-        print("\nThat was not an integer!")
 
     print("\nDone.")
 
